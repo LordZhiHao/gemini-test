@@ -1,0 +1,9 @@
+# front end 
+/gemini-test/node_modules
+/gemini-test/dist
+/gemini-test/.cache
+
+# back end
+myvenv
+__pycache__
+.env

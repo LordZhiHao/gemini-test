@@ -34,7 +34,7 @@ def call_gemini(input_language: str, output_language: str, text_input: str) -> s
         # load llm
         load_dotenv()
         GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-        llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", api_key=GEMINI_API_KEY)
+        llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", api_key=GEMINI_API_KEY, temperature=0.8)
 
         # create prompt
         prompt = ChatPromptTemplate.from_messages([

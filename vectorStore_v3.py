@@ -28,7 +28,15 @@ vector_store = MongoDBAtlasVectorSearch(
     relevance_score_fn="cosine",
 )
 
-retriever = vector_store.as_retriever()
+# get total documents 
+total_docs = MONGODB_COLLECTION.count_documents({})
+
+retriever = vector_store.as_retriever(
+    search_kwargs = {
+        "k": total_docs, 
+        "score_threshold": 0.0
+    }
+)
 
 chain = RetrievalQA.from_chain_type(
     llm=llm_model,

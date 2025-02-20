@@ -36,7 +36,7 @@ chain = RetrievalQA.from_chain_type(
     chain_type="stuff"
 )
 
-ai_response = chain.invoke("what is the genetic syndromes for diabetes")
+ai_response = chain.invoke("what is the genetic syndromes for diabetes type 1")
 print(ai_response["result"])
 
 client.close()

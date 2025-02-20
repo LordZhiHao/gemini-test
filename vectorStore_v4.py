@@ -20,6 +20,9 @@ ATLAS_VECTOR_SEARCH_INDEX_NAME = "test-index-pdf"
 
 MONGODB_COLLECTION = client[DB_NAME][COLLECTION_NAME]
 
+# clearing (deleting) previous documents
+MONGODB_COLLECTION.delete_many({})
+
 vector_store = MongoDBAtlasVectorSearch(
     collection=MONGODB_COLLECTION,
     embedding=embeddings,
@@ -28,7 +31,7 @@ vector_store = MongoDBAtlasVectorSearch(
 )
 
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000,
+    chunk_size=100,
     chunk_overlap=100
 )
 

@@ -20,6 +20,9 @@ ATLAS_VECTOR_SEARCH_INDEX_NAME = "test-index-1"
 
 MONGODB_COLLECTION = client[DB_NAME][COLLECTION_NAME]
 
+# clearing (deleting) previous documents
+MONGODB_COLLECTION.delete_many({})
+
 vector_store = MongoDBAtlasVectorSearch(
     collection=MONGODB_COLLECTION,
     embedding=embeddings,

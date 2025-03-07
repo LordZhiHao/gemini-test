@@ -18,5 +18,5 @@ agent = create_pandas_dataframe_agent(
     allow_dangerous_code=True
 )
 
-res = agent.invoke("What is the average math score")
+res = agent.invoke("What is the lowest math, reading and writing score")
 print(res["output"])

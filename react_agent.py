@@ -28,7 +28,7 @@ app.add_middleware(
 # Initialize LLM and tools
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.0, api_key=GEMINI_API_KEY)
-tools = load_tools(["llm-math", "arxiv", "pubmed"], llm=llm)
+tools = load_tools(["llm-math", "arxiv", "pubmed", "wikipedia"], llm=llm)
 
 # Create prompt template
 prompt = PromptTemplate.from_template(
